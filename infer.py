@@ -3,8 +3,8 @@ import torch
 from ComposerPipeline import ComposerStableDiffusionPipeline
 
 if __name__ == "__main__":
-    loaded_pipe = ComposerStableDiffusionPipeline.load_custom_pretrained("./ComposerStableDiffusion").to("cuda")
-    # loaded_pipe = ComposerStableDiffusionPipeline.load_custom_pretrained(load_directory=None).to("cuda")
+    # loaded_pipe = ComposerStableDiffusionPipeline.load_custom_pretrained("./ComposerStableDiffusion").to("cuda")
+    loaded_pipe = ComposerStableDiffusionPipeline.load_custom_pretrained(load_directory=None).to("cuda")
     print("Custom pipeline created successfully!")
     # 推理示例
     test_data = {
