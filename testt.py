@@ -57,5 +57,5 @@ if __name__ == '__main__':
     print("Training complete!")
     # 保存模型
     save_directory = "./ComposerStableDiffusion"
-    composer_pipe.save_pretrained(save_directory)
+    composer_pipe.save_custom_pretrained(save_directory)
     print(f"Model saved to{save_directory}")
