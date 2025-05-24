@@ -79,6 +79,7 @@ if __name__ == '__main__':
         loss.backward()
         # 梯度裁剪
         torch.nn.utils.clip_grad_norm_(composer_pipe.unet.parameters(), 1.0)
+        # 更新参数
         optimizer.step()
         # 学习率调度
         lr_scheduler.step()
