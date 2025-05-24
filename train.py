@@ -13,6 +13,7 @@ if __name__ == '__main__':
     # 创建虚拟数据加载器
     dataset = ComposerDataset(num_samples=2)
     dataloader = DataLoader(dataset, batch_size=1, shuffle=True)
+    num_epochs = 2
 
     # 简化训练循环
     optimizer = torch.optim.AdamW(composer_pipe.unet.parameters(), lr=1e-5)
@@ -31,7 +32,7 @@ if __name__ == '__main__':
     composer_pipe.vae.eval()
     scaling_factor = composer_pipe.vae.config.scaling_factor
 
-    for epoch in range(2):  # 简单运行2个epoch
+    for epoch in range(num_epochs):
         # 训练循环调整（示例片段）
         for batch in dataloader:
             # 前向调用需要传递所有条件
