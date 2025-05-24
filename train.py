@@ -45,8 +45,8 @@ if __name__ == '__main__':
             noise = torch.randn_like(latents)
 
             # 计算噪声
-            timesteps = torch.randint(0, composer_pipe.lr_scheduler.config.num_train_steps, (latents.shape[0],)).to(
-                device)
+            timesteps = torch.randint(0, composer_pipe.lr_scheduler.config.num_train_steps, (latents.shape[0],))
+            timesteps = timesteps.to(device)
             timesteps.long()
 
             # 添加噪声到潜在变量
