@@ -79,7 +79,7 @@ for epoch in range(2):  # 简单运行2个epoch
             # 添加噪声
             noise = torch.randn_like(latents)
             timesteps = torch.randint(0, 1000, (latents.shape[0],)).to(device)
-            noisy_latents = pipe.scheduler.add_noise(latents, noise, timesteps)
+            noisy_latents = pipe.lr_scheduler.add_noise(latents, noise, timesteps)
 
             # 文本编码
             text_input = pipe.tokenizer(
